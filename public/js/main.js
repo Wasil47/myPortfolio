@@ -1,4 +1,3 @@
-console.log("JS is workin.");
 const navBar = document.getElementById("navbar");
 const hamMenu = document.querySelector(".ham");
 

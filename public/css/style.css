@@ -7,6 +7,29 @@
   padding: 0;
 }
 
+#particles-js {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url(/public/images/mountain_PNG18.png);
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -47,15 +70,13 @@ body {
   background: #4d6680;
 }
 
-main {
-  padding-top: 2em;
-}
-
-.bold {
+.trans-bold {
   font-weight: bold;
+  opacity: 0.7;
 }
 
-.semi-transparent {
+.semi-visible {
+  font-size: 0.6em;
   opacity: 0.5;
 }
 
@@ -154,4 +175,20 @@ header p {
   -webkit-transform: translateX(120%);
           transform: translateX(120%);
 }
+
+/* END NAVBAR */
+/* START 1st WELCOME SECTION */
+.welcome-section {
+  background: #303841;
+  font-size: 1.5em;
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+.welcome-section .test {
+  position: relative;
+  z-index: 2;
+}
+
+/* END WELCOME SECTION */
 /*# sourceMappingURL=style.css.map */

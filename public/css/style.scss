@@ -11,6 +11,7 @@ $break-small: 576px;
 $break-medium: 768px;
 $break-large: 992px;
 $break-xlarge: 1200px;
+$mountain: url(/public/images/mountain_PNG18.png);
 
 /* mixins */
 @mixin respond-to($media) {
@@ -27,12 +28,29 @@ $break-xlarge: 1200px;
     @media (min-width: $break-xlarge) { @content; }
   }
 }
-// @include respond-to(small) { font-size: 110%; }
+@mixin bg {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
 
 * {
   margin: 0;
   padding: 0;
   // border: 0.5px solid white; 
+}
+#particles-js {
+  @include bg;
+}
+.bg {
+  @include bg;
+  background-image: $mountain;  
+  // mix-blend-mode: soft-light;
 }
 html {
   box-sizing: border-box;
@@ -52,13 +70,12 @@ html {
 body {
   background: $background-color-light;
 }
-main {
-  padding-top: 2em;
-}
-.bold {
+.trans-bold {
   font-weight: bold;
+  opacity: 0.7;
 }
-.semi-transparent {
+.semi-visible {
+  font-size: 0.6em;;
   opacity: 0.5;
 }
 /* START NAVBAR */
@@ -117,7 +134,7 @@ header p {
     background: $text-color-light;
     border-radius: 3px;
     position: relative;
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;    
     // &:first-child {
     //   transform-origin: 0% 0%;      
     // }
@@ -143,4 +160,24 @@ header p {
 .hide {
   transform: translateX(120%);
 }
+/* END NAVBAR */
+
+/* START 1st WELCOME SECTION */
+.welcome-section {
+  background: $background-color-dark;
+  font-size: 1.5em;
+  padding: 4rem 0 2rem 0;
+  // height: 50vh;
+  text-align: center;
+  // opacity: 0.8;
+  
+  .test {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+
+/* END WELCOME SECTION */
 
