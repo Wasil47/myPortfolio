@@ -38,6 +38,17 @@ $mountain: url(/public/images/mountain_PNG18.png);
   background-size: cover;
   background-position: 50% 50%;
 }
+@mixin fade-in {
+  animation: fade-in 2s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 * {
   margin: 0;
@@ -69,6 +80,13 @@ html {
 }
 body {
   background: $background-color-light;
+}
+.center {
+  text-align: center;
+}
+.in-front {
+  position: relative;
+  z-index: 2;
 }
 .trans-bold {
   font-weight: bold;
@@ -162,22 +180,46 @@ header p {
 }
 /* END NAVBAR */
 
-/* START 1st WELCOME SECTION */
-.welcome-section {
+/* START WELCOME SECTION */
+#welcome-section {
   background: $background-color-dark;
   font-size: 1.5em;
   padding: 4rem 0 2rem 0;
   // height: 50vh;
-  text-align: center;
-  // opacity: 0.8;
-  
-  .test {
-    position: relative;
-    z-index: 2;
+  // text-align: center;
+  // opacity: 0.8;  
+}
+/* END WELCOME SECTION */
+
+/* START ABOUT SECTION */
+#about-section {
+  background: $text-color-light;
+  box-shadow: 0 0 0.3rem black; 
+  border-radius: 0.5em;
+  color: $nav-color;
+  font-size: 1.2em;
+  width: 90%;
+  max-width: 50rem;
+  margin: 2em auto 0 auto;
+  position: relative;
+}
+.about {
+  padding: 1em;
+  h2 {
+    color: black;
+    font-weight: bold;
   }
 }
+/* END ABOUT SECTION */
 
-
-
-/* END WELCOME SECTION */
+/* START SKILL SECTION */
+#skill-section {
+  font-weight: normal;
+  text-shadow: 0px 0.5px 2px black;
+  margin: 2em auto 0 auto;
+  max-width: 30em;
+  width: 80%;
+  
+}
+/* END SKILL SECTION */
 

@@ -2,6 +2,23 @@
 /* Variables */
 /* Device Breakpoints px - < 576 < 768 < 992 < 1200 */
 /* mixins */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -68,6 +85,15 @@ html {
 
 body {
   background: #4d6680;
+}
+
+.center {
+  text-align: center;
+}
+
+.in-front {
+  position: relative;
+  z-index: 2;
 }
 
 .trans-bold {
@@ -177,18 +203,46 @@ header p {
 }
 
 /* END NAVBAR */
-/* START 1st WELCOME SECTION */
-.welcome-section {
+/* START WELCOME SECTION */
+#welcome-section {
   background: #303841;
   font-size: 1.5em;
   padding: 4rem 0 2rem 0;
-  text-align: center;
-}
-
-.welcome-section .test {
-  position: relative;
-  z-index: 2;
 }
 
 /* END WELCOME SECTION */
+/* START ABOUT SECTION */
+#about-section {
+  background: #acb8b4;
+  -webkit-box-shadow: 0 0 0.3rem black;
+          box-shadow: 0 0 0.3rem black;
+  border-radius: 0.5em;
+  color: #303f50;
+  font-size: 1.2em;
+  width: 90%;
+  max-width: 50rem;
+  margin: 2em auto 0 auto;
+  position: relative;
+}
+
+.about {
+  padding: 1em;
+}
+
+.about h2 {
+  color: black;
+  font-weight: bold;
+}
+
+/* END ABOUT SECTION */
+/* START SKILL SECTION */
+#skill-section {
+  font-weight: normal;
+  text-shadow: 0px 0.5px 2px black;
+  margin: 2em auto 0 auto;
+  max-width: 30em;
+  width: 80%;
+}
+
+/* END SKILL SECTION */
 /*# sourceMappingURL=style.css.map */
