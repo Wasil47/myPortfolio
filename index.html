@@ -7,10 +7,8 @@
 <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
-  <div id="particles-js"></div>
+  <canvas id="canvas"></canvas>
   <!-- <div class="bg"></div> -->
-  
-  
   
 <!-- START NAVBAR -->
   <nav id="navbar" class="hide">
@@ -33,10 +31,11 @@
 <!-- END NAVBAR -->
   <main>
 <!-- START WELCOME SECTION -->
+
     <section id="welcome-section">
       <div class="center in-front">
       <h1>Hey, I am Mateusz</h1>      
-      <p class="trans-bold">Front End / Full Stack developer</p>
+      <p class="trans-bold">Front End / Full Stack Developer</p>
       <p class="semi-visible">EXP. LEVEL: BEGINNER</p>
       </div>
 
@@ -46,21 +45,60 @@
     <section id="about-section">
       <div class="about in-front">
         <h2>About me</h2>
-        <p>My name is Mateusz, I am a beginner front-end developer living in Poland.</p>
+        <p>My name is Mateusz, I am a beginner full-stack developer, 
+          mainly focusing on front-end, living in Poland.</p>
       </div>
 
     </section>
 <!-- END ABOUT SECTION -->
 <!-- START SKILLS SECTION -->
     <section id="skill-section">
-      <h2 class="center">What do I know:</h2>
-      <h3>Beginner</h3>
-      <div class="skill">
-
+      <h1 class="center">Technologies:</h1>
+      <h3>Regular</h3>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/html5.png" alt="html-img">
+        <aside class="skill-comment">I'm familiar with Semantic HTML, RWD and mobile first</aside>
       </div>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/css3.png" alt="css-img">
+        <aside class="skill-comment">Thanks to good knowledge of Flexbox and Grid my websites are responsive. I use SASS/SCSS as a preprocessor</aside>
+      </div>
+      <h3>Junior</h3>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/js2.png" alt="js-img">
+        <aside class="skill-comment">I learn & discover new things every day. I'm familiar with = [loops, ()=>{}, async, promise, HTML DOM];</aside>
+      </div>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/node2.png" alt="node-img">
+        <aside class="skill-comment">I've spent some time with Node.js, mainly using Express.js<aside>
+      </div>
+      <h3>Beginner</h3>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/bootstrap.png" alt="bootstrap-img">
+        <aside class="skill-comment">I've used Bootstrap few times. 
+          I can read it's documentation or find necessary information pretty fast<aside>
+      </div>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/mongodb.png" alt="mongodb-img">
+        <aside class="skill-comment">Thanks to MongoDB, which I use, 
+          I have basic knowledge about NoSQL databases<aside>
+      </div>
+      <h3>Learning</h3>
+      <div class="skills">
+        <img class="skill-img" src="./public/images/react.png" alt="react-img">
+        <aside class="skill-comment">My immediate goal is to learn React<aside>
+      </div>
+      <h4>In general I have beginners/juniors knowledge of web development, 
+        but I am pretty good at finding informations and solutions.</h4>
     </section>
 <!-- END SKILLS SECTION -->
+<!-- START PROJECTS SECTION -->
+    <section id="project-section">
 
+      <!-- zrobić karuzele -->
+      
+    </section>
+<!-- END PROJECTS SECTION -->
   
 
 
@@ -68,10 +106,9 @@
 
   </main>
   
-<!-- Particle's Author : Vincent Garreau  - vincentgarreau.com -->
-<script src="./public/js/particles.min.js"></script>
-<script src="./public/js/particles.js"></script>
+
 <!-- My Scripts -->
+<!-- <script src="./public/js/test.js"></script> -->
 <script src="./public/js/dots.js"></script>
 <script src="./public/js/main.js"></script>
 </body>

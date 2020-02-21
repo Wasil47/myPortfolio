@@ -3,7 +3,7 @@
 $main-font: 'Darker Grotesque', sans-serif;
 $background-color-light: #4d6680;
 $background-color-dark: #303841;
-$text-color-light: #acb8b4;
+$text-color-light: #acb9b5;
 $nav-color: #303f50;
 $hover-color: #be3144;
 /* Device Breakpoints px - < 576 < 768 < 992 < 1200 */
@@ -49,14 +49,14 @@ $mountain: url(/public/images/mountain_PNG18.png);
     opacity: 1;
   }
 }
-
 * {
   margin: 0;
   padding: 0;
   // border: 0.5px solid white; 
 }
-#particles-js {
+#canvas {
   @include bg;
+  // mix-blend-mode: soft-light;
 }
 .bg {
   @include bg;
@@ -98,19 +98,21 @@ body {
 }
 /* START NAVBAR */
 #navbar {
+  align-items: center;
   background: $nav-color;
   box-shadow: 0 0.1px 5px black; 
-  display: flex;
+  display: flex;  
   justify-content: space-between;
   left: 0;
   top: 0;
   width: 100%;
   transition: all 0.6s ease-in-out;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
 }
 #nav-head {
-  padding-left: 0.3em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
   text-transform: uppercase;
 }
 header p {
@@ -118,12 +120,14 @@ header p {
 }
 .nav-list {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
-  padding-right: 4em;
+  padding-right: 3em;
 }
 .nav-link {
   text-align: center;
-  width: 5em; 
+  width: 5em;
+  flex-grow: 1;
   a {
     color: $text-color-light;
     display: block;    
@@ -139,11 +143,11 @@ header p {
   display: block;
   position: fixed;
   top: 0em;
-  right: 1em;
+  right: 0.5em;
   margin: 1px;
   width: 2em;
   height: 2em;
-  z-index: 2;
+  z-index: 11;
   .line {
     display: block;
     width: 1.8em;
@@ -183,11 +187,14 @@ header p {
 /* START WELCOME SECTION */
 #welcome-section {
   background: $background-color-dark;
-  font-size: 1.5em;
-  padding: 4rem 0 2rem 0;
-  // height: 50vh;
-  // text-align: center;
-  // opacity: 0.8;  
+  font-size: 1.6em;
+  height: 100vh;
+  box-shadow: 0 0 0.2rem $background-color-dark;
+  text-shadow: 0px 0.5px 2px black;
+  div {
+    top: 30%;
+    // padding: 5rem 0 2rem 0;
+  }
 }
 /* END WELCOME SECTION */
 
@@ -196,11 +203,11 @@ header p {
   background: $text-color-light;
   box-shadow: 0 0 0.3rem black; 
   border-radius: 0.5em;
-  color: $nav-color;
+  color: $background-color-dark;
   font-size: 1.2em;
   width: 90%;
   max-width: 50rem;
-  margin: 2em auto 0 auto;
+  margin: -1em auto 0 auto;
   position: relative;
 }
 .about {
@@ -218,8 +225,30 @@ header p {
   text-shadow: 0px 0.5px 2px black;
   margin: 2em auto 0 auto;
   max-width: 30em;
-  width: 80%;
-  
+  width: 90%;
+}
+.skills {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0 0.5em 0;
+}
+.skill-img {
+  height: 3em;
+  width: 3em;  
+}
+.skill-comment {
+  padding-left: 0.2em;
+  font-size: 1.1em;
+  max-width: calc(100% - 3em);
 }
 /* END SKILL SECTION */
 
+/* START PROJECT SECTION */
+#project-section {
+  display: grid;
+  width: 90%;
+  max-width: 60em;  
+}
+// zrobic karuzele
+
+/* END PROJECT SECTION */
