@@ -2,8 +2,8 @@ const canvas = document.getElementById('canvas'),
 ctx = canvas.getContext('2d'),
 dots = [],
 // changeable
-amount = 280, // relative (amount per sqrt(width+height)px / 100)
-speed = 4, // max speed (0-speed) [px per 10sec]
+amount = 180, // relative (amount per sqrt(width+height)px / 100)
+speed = 5, // max speed (0-speed) [px per 10sec]
 size = 1.5, // max size (0-size)
 lineWidth = 0.3,
 connectionDistance = 220,
@@ -32,6 +32,10 @@ window.addEventListener('resize', ()=>{
   ctx.fillStyle = color;
   ctx.shadowColor = shadowColor;
   ctx.shadowBlur = shadowBlur;
+
+  // eliminate lags and slows after resize (bad idea)
+  // dots.length = 0;
+  // createAllDots();
 });
 
 const screenRelative = Math.sqrt(w + h) / 100;
@@ -69,16 +73,16 @@ class Dot {
     }
     // hit when resize screen
     if (this.xpos < 0) {
-      this.xpos = this.randomSize + 2;
+      this.xpos = this.randomSize + 10;
     }    
     if (this.xpos > w) {
-      this.xpos = w - this.randomSize - 2;
+      this.xpos = w - this.randomSize - 10;
     }    
     if (this.ypos < 0) {
-      this.ypos = this.randomSize + 2;
+      this.ypos = this.randomSize + 10;
     }    
     if (this.ypos > h) {
-      this.ypos = h - this.randomSize - 2;
+      this.ypos = h - this.randomSize - 10;
     }
 
     this.xpos += this.dx;

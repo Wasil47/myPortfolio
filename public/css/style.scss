@@ -6,6 +6,10 @@ $background-color-dark: #303841;
 $text-color-light: #acb9b5;
 $nav-color: #303f50;
 $hover-color: #be3144;
+// $slider-width: 400px;
+// $slider-height: 300px;
+$slider-width: 20rem;
+$slider-height: 15rem;
 /* Device Breakpoints px - < 576 < 768 < 992 < 1200 */
 $break-small: 576px;
 $break-medium: 768px;
@@ -157,15 +161,6 @@ header p {
     border-radius: 3px;
     position: relative;
     transition: all .2s ease-in-out;    
-    // &:first-child {
-    //   transform-origin: 0% 0%;      
-    // }
-    // &:nth-of-type(2) {
-    //   transform-origin: 0% 0%;      
-    // }
-    // &:nth-of-type(3) {
-    //   transform-origin: 0% 100%;      
-    // }
   }
   &.active {
     .line:first-child{
@@ -223,7 +218,7 @@ header p {
 #skill-section {
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
-  margin: 2em auto 0 auto;
+  margin: 2em auto 1em auto;
   max-width: 30em;
   width: 90%;
 }
@@ -245,10 +240,80 @@ header p {
 
 /* START PROJECT SECTION */
 #project-section {
-  display: grid;
-  width: 90%;
-  max-width: 60em;  
+  margin: 1em auto 1em auto;
+  width: 100%;
+  max-width: 60em;
+  font-weight: normal;
+  text-shadow: 0px 0.5px 2px black;
 }
-// zrobic karuzele
+#slider {
+  margin: 0.5em auto 0 auto;
+  background: gray;
+  position: relative;
+  // top: 50%;
+  // left: 50%;
+  // transform: translateX(-50%);
+  width: $slider-width;
+  height: $slider-height;
+  max-width: 100vmin;
+  box-shadow: 0 0 0.3rem black;  
+}
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  width: $slider-width;
+  height: $slider-height;
+  max-width: 100vmin;
+  z-index: 1;
+}
+.slides {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: -$slider-width;
+  width: 10000px;
+}
+.slides.shifting {
+  transition: left .2s ease-out;
+}
+.slide {
+  font-size: 2em;
+  width: $slider-width;
+  height: $slider-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // transition: all 1s;
+  position: relative;
+  background: green;
+  max-width: 100vmin;
+  img {
+    width: 80%;
+    height: 80%;
+    background: #b89f72;
+  }
+}
+#prev, #next {
+  border-radius: 5%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2em;
+  position: absolute;
+  top: calc(50% - 1.5em);
+  padding: 1em .5em 1em .5em;
+  z-index: 2;
+  &:hover{
+    background:$hover-color;
+    box-shadow: 0 0 0.5rem black;
+  }  
+}
+#next {
+  right: 0;
+}
+.projectName {
+
+}
+
 
 /* END PROJECT SECTION */
