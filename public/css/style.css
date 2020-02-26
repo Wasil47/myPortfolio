@@ -65,19 +65,19 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-height: 576px) {
   html {
     font-size: 120%;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height: 576px) {
   html {
     font-size: 130%;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 768px) {
   html {
     font-size: 140%;
   }
@@ -214,16 +214,100 @@ header p {
 /* END NAVBAR */
 /* START WELCOME SECTION */
 #welcome-section {
-  background: #303841;
-  font-size: 1.6em;
   height: 100vh;
+  background: #303841;
   -webkit-box-shadow: 0 0 0.2rem #303841;
           box-shadow: 0 0 0.2rem #303841;
   text-shadow: 0px 0.5px 2px black;
+  font-size: 1.6em;
 }
 
-#welcome-section div {
-  top: 30%;
+.welcome {
+  position: relative;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  height: 100%;
+  max-width: 60rem;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+}
+
+.welcome .hello {
+  padding-top: 25vmin;
+}
+
+@media (min-width: 576px) {
+  .welcome .hello {
+    padding-top: 20vmin;
+  }
+}
+
+@media (min-width: 992px) and (min-height: 576px) {
+  .welcome .hello {
+    padding-top: 50vmin;
+    padding-left: 20vmin;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 768px) {
+  .welcome .hello {
+    padding-top: 40vmin;
+    padding-left: 20vmin;
+    font-size: 1.2em;
+  }
+}
+
+.welcome .profile-photo {
+  position: relative;
+  margin: 1em auto 0 auto;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 0.3rem black;
+          box-shadow: 0 0 0.3rem black;
+  height: 200px;
+  width: 200px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 50%;
+  background: #acb9b5;
+  z-index: 0;
+}
+
+@media (min-width: 576px) {
+  .welcome .profile-photo {
+    height: 8em;
+    width: 8em;
+  }
+}
+
+@media (min-width: 992px) and (min-height: 576px) {
+  .welcome .profile-photo {
+    position: absolute;
+    bottom: 0.9rem;
+    left: 0.3em;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: none;
+    overflow: visible;
+    height: 12em;
+    width: 12em;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 768px) {
+  .welcome .profile-photo {
+    height: 15em;
+    width: 15em;
+  }
+}
+
+.welcome .profile-photo .photo {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 30%;
+  background-image: url(/public/images/profilowe.png);
 }
 
 /* END WELCOME SECTION */
@@ -236,7 +320,7 @@ header p {
   color: #303841;
   font-size: 1.2em;
   width: 90%;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: -1em auto 0 auto;
   position: relative;
 }
@@ -256,7 +340,7 @@ header p {
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
   margin: 2em auto 1em auto;
-  max-width: 30em;
+  max-width: 40rem;
   width: 90%;
 }
 
@@ -284,9 +368,9 @@ header p {
 /* END SKILL SECTION */
 /* START PROJECT SECTION */
 #project-section {
-  margin: 1em auto 1em auto;
+  margin: 1em auto 0 auto;
   width: 100%;
-  max-width: 60em;
+  max-width: 60rem;
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
 }
@@ -297,7 +381,7 @@ header p {
   position: relative;
   width: 20rem;
   height: 15rem;
-  max-width: 100vmin;
+  max-width: 90vmin;
   -webkit-box-shadow: 0 0 0.3rem black;
           box-shadow: 0 0 0.3rem black;
 }
@@ -307,7 +391,7 @@ header p {
   position: relative;
   width: 20rem;
   height: 15rem;
-  max-width: 100vmin;
+  max-width: 90vmin;
   z-index: 1;
 }
 
@@ -345,7 +429,7 @@ header p {
           align-items: center;
   position: relative;
   background: green;
-  max-width: 100vmin;
+  max-width: 90vmin;
 }
 
 .slide img {
@@ -376,4 +460,60 @@ header p {
 }
 
 /* END PROJECT SECTION */
+/* START CONTACT SECTION */
+#contact-section {
+  background: #303841;
+  font-size: 1.6em;
+  margin: -1em auto 0 auto;
+  padding: 2em 0 1em 0;
+  -webkit-box-shadow: 0 0 0.2rem #303841;
+          box-shadow: 0 0 0.2rem #303841;
+  text-shadow: 0px 0.5px 2px black;
+}
+
+.contact-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5em auto 0 auto;
+  max-width: 50em;
+  width: 95%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-icons .contact-text {
+  text-decoration: none;
+  color: white;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 6em;
+  margin: 0.1em 0.3em;
+  -webkit-transition: all 0.2s ease-out 0.1s;
+  transition: all 0.2s ease-out 0.1s;
+}
+
+.contact-icons .contact-text:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #be3144;
+  font-weight: bold;
+}
+
+.contact-icons .icon {
+  max-height: 1em;
+  max-width: 50%;
+  margin-top: 0.2em;
+}
+
+/* END CONTACT SECTION */
 /*# sourceMappingURL=style.css.map */

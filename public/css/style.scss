@@ -16,6 +16,7 @@ $break-medium: 768px;
 $break-large: 992px;
 $break-xlarge: 1200px;
 $mountain: url(/public/images/mountain_PNG18.png);
+$me: url(/public/images/profilowe.png);
 
 /* mixins */
 @mixin respond-to($media) {
@@ -23,13 +24,13 @@ $mountain: url(/public/images/mountain_PNG18.png);
     @media (min-width: $break-small) { @content; }
   } 
   @else if $media == medium {
-    @media (min-width: $break-medium) { @content; }
+    @media (min-width: $break-medium) and (min-height: $break-small) { @content; }
   }
   @else if $media == large {
-    @media (min-width: $break-large) { @content; }
+    @media (min-width: $break-large) and (min-height: $break-small) { @content; }
   }
   @else if $media == xlarge {
-    @media (min-width: $break-xlarge) { @content; }
+    @media (min-width: $break-xlarge) and (min-height: $break-medium) { @content; }
   }
 }
 @mixin bg {
@@ -181,14 +182,73 @@ header p {
 
 /* START WELCOME SECTION */
 #welcome-section {
-  background: $background-color-dark;
-  font-size: 1.6em;
   height: 100vh;
+  background: $background-color-dark;
   box-shadow: 0 0 0.2rem $background-color-dark;
   text-shadow: 0px 0.5px 2px black;
-  div {
-    top: 30%;
-    // padding: 5rem 0 2rem 0;
+  font-size: 1.6em;
+}
+.welcome {
+  position: relative;
+  transition: all .5s;
+  height: 100%; 
+  max-width: 60rem; 
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+  .hello {
+    padding-top: 25vmin;
+    @include respond-to(small) {
+      padding-top: 20vmin;
+    }
+    @include respond-to(large) {
+      padding-top: 50vmin;
+      padding-left: 20vmin;
+    }
+    @include respond-to(xlarge) {
+      padding-top: 40vmin;
+      padding-left: 20vmin;
+      font-size: 1.2em;
+    }
+  }
+  .profile-photo {
+    position: relative;
+    margin: 1em auto 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 0.3rem black; 
+    height: 200px;
+    width: 200px;
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 50%;
+    background: $text-color-light;
+    z-index: 0;
+    @include respond-to(small) {
+      height: 8em;
+      width: 8em;
+    }
+    @include respond-to(large) {
+      position: absolute;
+      bottom: 0.9rem;
+      left: 0.3em;
+      border-radius: 0;
+      box-shadow: none;
+      background: none;
+      overflow: visible;
+      height: 12em;
+      width: 12em;
+    }
+    @include respond-to(xlarge) {
+      height: 15em;
+      width: 15em;
+    }
+    .photo {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 30%;
+      background-image: $me;
+    }
   }
 }
 /* END WELCOME SECTION */
@@ -201,7 +261,7 @@ header p {
   color: $background-color-dark;
   font-size: 1.2em;
   width: 90%;
-  max-width: 50rem;
+  max-width: 60rem;
   margin: -1em auto 0 auto;
   position: relative;
 }
@@ -219,7 +279,7 @@ header p {
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
   margin: 2em auto 1em auto;
-  max-width: 30em;
+  max-width: 40rem;
   width: 90%;
 }
 .skills {
@@ -240,9 +300,9 @@ header p {
 
 /* START PROJECT SECTION */
 #project-section {
-  margin: 1em auto 1em auto;
+  margin: 1em auto 0 auto;
   width: 100%;
-  max-width: 60em;
+  max-width: 60rem;
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
 }
@@ -255,7 +315,7 @@ header p {
   // transform: translateX(-50%);
   width: $slider-width;
   height: $slider-height;
-  max-width: 100vmin;
+  max-width: 90vmin;
   box-shadow: 0 0 0.3rem black;  
 }
 .wrapper {
@@ -263,7 +323,7 @@ header p {
   position: relative;
   width: $slider-width;
   height: $slider-height;
-  max-width: 100vmin;
+  max-width: 90vmin;
   z-index: 1;
 }
 .slides {
@@ -287,7 +347,7 @@ header p {
   // transition: all 1s;
   position: relative;
   background: green;
-  max-width: 100vmin;
+  max-width: 90vmin;
   img {
     width: 80%;
     height: 80%;
@@ -315,5 +375,44 @@ header p {
 
 }
 
-
 /* END PROJECT SECTION */
+
+/* START CONTACT SECTION */
+#contact-section {
+  background: $background-color-dark;
+  font-size: 1.6em;
+  margin: -1em auto 0 auto;
+  padding: 2em 0 1em 0;
+  box-shadow: 0 0 0.2rem $background-color-dark;
+  text-shadow: 0px 0.5px 2px black;
+}
+.contact-icons {
+  display: flex;
+  margin: 0.5em auto 0 auto;
+  max-width: 50em;
+  width: 95%;
+  justify-content: center;
+  .contact-text {
+    text-decoration: none;
+    color: white;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6em;
+    margin: 0.1em 0.3em;
+    transition: all 0.2s ease-out 0.1s;
+    &:hover {
+      transform: scale(1.2);
+      color: $hover-color;
+      font-weight: bold;
+    }
+  }  
+  .icon {
+    max-height: 1em;
+    max-width: 50%;
+    margin-top: 0.2em;
+  }
+}
+
+/* END CONTACT SECTION */

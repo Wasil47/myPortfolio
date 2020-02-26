@@ -17,7 +17,7 @@
       <p class="trans-bold">Wasil</p>
     </header>
     <ul class="nav-list">
-      <li class="nav-link"><a href="">About me</a></li>
+      <li class="nav-link"><a href="#about-section">About me</a></li>
       <li class="nav-link"><a href="">Skills</a></li>
       <li class="nav-link"><a href="">Projects</a></li>
       <li class="nav-link"><a href="">Contact</a></li>
@@ -33,11 +33,17 @@
 <!-- START WELCOME SECTION -->
 
     <section id="welcome-section">
-      <div class="center in-front">
-      <h1>Hey, I am Mateusz</h1>      
-      <p class="trans-bold">Front End / Full Stack Developer</p>
-      <p class="semi-visible">EXP. LEVEL: BEGINNER</p>
-      </div>
+      <div class="welcome">
+        <div class="center in-front hello">
+          <h1>Hey, I am Mateusz</h1>      
+          <p class="trans-bold">Front End / Full Stack Developer</p>
+          <p class="semi-visible">EXP. LEVEL: BEGINNER</p>
+        </div>
+        <div class="center in-front profile-photo">
+          <figure class="photo"></figure>
+          <!-- <img class="photo" src="./public/images/profilowe.png" alt="Me"> -->
+        </div>
+    </div>
 
     </section>
 <!-- END WELCOME SECTION -->
@@ -46,7 +52,8 @@
       <div class="about in-front">
         <h2>About me</h2>
         <p>My name is Mateusz, I am a beginner full-stack developer, 
-          mainly focusing on front-end, living in Poland.</p>
+          mainly focusing on front-end. I live in Poland, currently in
+          Lublin.</p>
       </div>
 
     </section>
@@ -97,7 +104,7 @@
         <img class="skill-img" src="./public/images/react.png" alt="react-img">
         <aside class="skill-comment">My immediate goal is to learn React<aside>
       </div>
-      <h4>In general I have beginners/juniors knowledge of web development, 
+      <h4 class="center">In general I have beginners/juniors knowledge of web development, 
         but I am pretty good at finding informations and solutions.</h4>
     </section>
 <!-- END SKILLS SECTION -->
@@ -111,16 +118,20 @@
             <div class="slide">
               <img src="" alt="">
                 <div class="projectName">Slide 1</div>
-            </div>        <div class="slide">
+            </div>        
+            <div class="slide">
               <img src="" alt="">
                 <div class="projectName">Slide 2</div>
-            </div>        <div class="slide">
+            </div>        
+            <div class="slide">
               <img src="" alt="">
                 <div class="projectName">Slide 3</div>
-            </div>        <div class="slide">
+            </div>        
+            <div class="slide">
               <img src="" alt="">
                 <div class="projectName">Slide 4</div>
-            </div>        <div class="slide">
+            </div>        
+            <div class="slide">
               <img src="" alt="">
                 <div class="projectName">Slide 5</div>
             </div>
@@ -133,20 +144,35 @@
         </div>
         <a id="prev" class="control">&#10094;</a>
         <a id="next" class="control">&#10095;</a>
-
-
     </div>
+    </section>
+<!-- END PROJECTS SECTION -->
+<!-- START CONTACT SECTION -->
+    <section id="contact-section">
+      <div class="center in-front">
+        <h1>Let's work together</h1>
+        <p class="trans-bold">Contact me</p>
+      </div>
+      <div class="contact-icons">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          class="contact-text">
+          <img class="icon" src="./public/images/facebook-icon.png">Facebook
+        </a>
+        <a
+          href="https://github.com/Wasil47"
+          target="_blank"
+          class="contact-text">
+          <img class="icon" src="./public/images/git-icon.png">GitHub
+        </a>
+      </div>
 
 
     </section>
-<!-- END PROJECTS SECTION -->
-  
+<!-- END CONTACT SECTION -->
 
-
-
-
-  </main>
-  
+  </main>  
 
 <!-- My Scripts -->
 <!-- <script src="./public/js/test.js"></script> -->

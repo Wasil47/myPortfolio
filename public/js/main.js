@@ -18,11 +18,12 @@ hamMenu.addEventListener("click", () => {
 });
 
 
-
 const slide = ()=>{
   let 
-  posInitial = slides.offsetLeft,
+  // posInitial = slides.offsetLeft,
   slideSize = slideArr[0].offsetWidth,
+  posInitial = -slideSize; // new (testing)
+  slides.style.left = -slideSize + "px"; // new (testing)
   slidesLength = slideArr.length,
   firstSlide = slideArr[0],
   lastSlide = slideArr[slideArr.length-1],
