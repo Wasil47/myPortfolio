@@ -15,8 +15,8 @@ $break-small: 576px;
 $break-medium: 768px;
 $break-large: 992px;
 $break-xlarge: 1200px;
-$mountain: url(/public/images/mountain_PNG18.png);
-$me: url(/public/images/profilowe2.png);
+$mountain: url(../images/mountain_PNG18.png);
+$me: url(../images/profilowe2.png);
 
 /* mixins */
 @mixin respond-to($media) {
