@@ -2,15 +2,15 @@ const canvas = document.getElementById('canvas'),
 ctx = canvas.getContext('2d'),
 dots = [],
 // changeable
-amount = 120, // relative (amount per sqrt(width+height)px / 100)
-speed = 5, // max speed (0-speed) [px per 10sec]
+amount = 160, // relative (amount per sqrt(width+height)px / 100)
+speed = 4, // max speed (0-speed) [px per 10sec]
 size = 1.6, // max size (0-size)
 lineWidth = 0.4,
-connectionDistance = 320,
+connectionDistance = 300,
 opacity = 0.9, // 0.1 - 1
 color = 'hsla(160, 8%, 70%, '+opacity+')',
 shadowColor = 'hsla(0, 0%, 70%, 0.6)',
-shadowBlur = 1;
+shadowBlur = 2;
 //
 
 
@@ -111,10 +111,10 @@ const moveDots = () => {
   dots.each((e)=>{
     e.move();
   });
-  // window.requestAnimationFrame(moveDots);  
+  window.requestAnimationFrame(moveDots);  
 };
 // decreases some lags
-window.setInterval(moveDots, 1000/20);
+// window.setInterval(moveDots, 1000/20);
 
 const line = () => {  
   const relativeDistance = connectionDistance * screenRelative;  
