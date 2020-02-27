@@ -441,7 +441,7 @@ header p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 30%;
-  background-image: url(/public/images/profilowe2.png);
+  background-image: url(../images/profilowe2.png);
 }
 
 .hide-hello {
