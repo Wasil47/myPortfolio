@@ -87,6 +87,9 @@ $me: url(../images/profilowe2.png);
   padding: 0;
   // border: 0.5px solid white; 
 }
+#particles-js {
+  @include bg;
+}
 #canvas {
   @include bg;
   // mix-blend-mode: soft-light;

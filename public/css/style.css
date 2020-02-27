@@ -142,6 +142,17 @@
   padding: 0;
 }
 
+#particles-js {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 #canvas {
   top: 0;
   left: 0;
