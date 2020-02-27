@@ -13,14 +13,16 @@
 <!-- START NAVBAR -->
   <nav id="navbar" class="hide">
     <header id="nav-head">
-      <p>Mateusz</p>
-      <p class="trans-bold">Wasil</p>
+      <a class="start-link" href="#welcome-section">
+        <p>Mateusz</p>
+        <p class="trans-bold">Wasil</p>
+      </a>
     </header>
     <ul class="nav-list">
       <li class="nav-link"><a href="#about-section">About me</a></li>
-      <li class="nav-link"><a href="">Skills</a></li>
-      <li class="nav-link"><a href="">Projects</a></li>
-      <li class="nav-link"><a href="">Contact</a></li>
+      <li class="nav-link"><a href="#skill-section">Skills</a></li>
+      <li class="nav-link"><a href="#project-section">Projects</a></li>
+      <li class="nav-link"><a href="#contact-section">Contact</a></li>
     </ul>
   </nav>
   <div class="ham">
@@ -35,12 +37,13 @@
     <section id="welcome-section">
       <div class="welcome">
         <div class="center in-front hello">
-          <h1>Hey, I am Mateusz</h1>      
-          <p class="trans-bold">Front End / Full Stack Developer</p>
-          <p class="semi-visible">EXP. LEVEL: BEGINNER</p>
+          <h1 class="hide-hello">Hey, I am Mateusz</h1>      
+          <p class="trans-bold hide-hello">Front End / Full Stack Developer</p>
+          <p class="semi-visible hide-hello">EXP. LEVEL: BEGINNER</p>
         </div>
         <div class="center in-front profile-photo">
           <figure class="photo"></figure>
+          
           <!-- <img class="photo" src="./public/images/profilowe.png" alt="Me"> -->
         </div>
     </div>
@@ -49,7 +52,7 @@
 <!-- END WELCOME SECTION -->
 <!-- START ABOUT SECTION -->
     <section id="about-section">
-      <div class="about in-front">
+      <div class="about in-front hide">
         <h2>About me</h2>
         <p>My name is Mateusz, I am a beginner full-stack developer, 
           mainly focusing on front-end. I live in Poland, currently in
@@ -62,45 +65,45 @@
     <section id="skill-section">
       <h1 class="center">Technologies:</h1>
       <h3>Regular</h3>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/html5.png" alt="html-img">
         <aside class="skill-comment">I'm familiar with Semantic HTML, RWD and mobile first</aside>
       </div>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/css3.png" alt="css-img">
         <aside class="skill-comment">Thanks to good knowledge of Flexbox and Grid my websites are responsive. I use SASS/SCSS as a preprocessor</aside>
       </div>
       <h3>Junior</h3>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/js2.png" alt="js-img">
         <aside class="skill-comment">I learn & discover new things every day. I'm familiar with = [loops, ()=>{}, async, promise, HTML DOM];</aside>
       </div>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/node2.png" alt="node-img">
         <aside class="skill-comment">I've spent some time with Node.js, mainly using Express.js<aside>
       </div>
       <h3>Beginner</h3>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/bootstrap.png" alt="bootstrap-img">
         <aside class="skill-comment">I've used Bootstrap few times. 
           I can read it's documentation or find necessary information pretty fast<aside>
       </div>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/mongodb.png" alt="mongodb-img">
         <aside class="skill-comment">Thanks to MongoDB, which I use, 
           I have basic knowledge about NoSQL databases<aside>
       </div>
       <h3>Tools</h3>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/git.png" alt="git-img">
         <aside class="skill-comment">Basics of Git & GitHub (branch, merge, push, pull request, etc.)<aside>
       </div>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/vsc.png" alt="vsc-img">
         <aside class="skill-comment">Basics of VS Code<aside>
       </div>
       <h3>Learning</h3>
-      <div class="skills">
+      <div class="skills slide-up">
         <img class="skill-img" src="./public/images/react.png" alt="react-img">
         <aside class="skill-comment">My immediate goal is to learn React<aside>
       </div>

@@ -2,6 +2,7 @@
 /* Variables */
 /* Device Breakpoints px - < 576 < 768 < 992 < 1200 */
 /* mixins */
+/* animations */
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -19,6 +20,123 @@
   }
 }
 
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(1px, 1px) rotate(0deg);
+            transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+            transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+            transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(3px, 2px) rotate(0deg);
+            transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+            transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+            transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+            transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(3px, 1px) rotate(-1deg);
+            transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+            transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(1px, 2px) rotate(0deg);
+            transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+            transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@-webkit-keyframes bounce {
+  25% {
+    -webkit-transform: translateY(-0.5em);
+            transform: translateY(-0.5em);
+  }
+  75% {
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
+  }
+}
+
+@keyframes bounce {
+  25% {
+    -webkit-transform: translateY(-0.5em);
+            transform: translateY(-0.5em);
+  }
+  75% {
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
+  }
+}
+
+/* WEB CSS */
 * {
   margin: 0;
   padding: 0;
@@ -129,10 +247,23 @@ body {
   z-index: 10;
 }
 
+#navbar a {
+  color: #acb9b5;
+  text-decoration: none;
+}
+
 #nav-head {
   padding-left: 0.2em;
   padding-right: 0.2em;
   text-transform: uppercase;
+}
+
+#nav-head .start-link:hover {
+  display: block;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 header p {
@@ -158,9 +289,7 @@ header p {
 }
 
 .nav-link a {
-  color: #acb9b5;
   display: block;
-  text-decoration: none;
   padding: 0.6em 0.1em;
 }
 
@@ -245,16 +374,21 @@ header p {
 @media (min-width: 992px) and (min-height: 576px) {
   .welcome .hello {
     padding-top: 50vmin;
-    padding-left: 20vmin;
+    padding-left: 10vmin;
   }
 }
 
 @media (min-width: 1200px) and (min-height: 768px) {
   .welcome .hello {
     padding-top: 40vmin;
-    padding-left: 20vmin;
-    font-size: 1.2em;
+    padding-left: 10vmin;
+    font-size: 1.3em;
   }
+}
+
+.welcome .hello h1, .welcome .hello p {
+  -webkit-transition: all 1.5s ease-in;
+  transition: all 1.5s ease-in;
 }
 
 .welcome .profile-photo {
@@ -307,12 +441,18 @@ header p {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 30%;
-  background-image: url(/public/images/profilowe.png);
+  background-image: url(/public/images/profilowe2.png);
+}
+
+.hide-hello {
+  -webkit-transform: rotateX(180deg) translateY(-200%) scale(0.01);
+          transform: rotateX(180deg) translateY(-200%) scale(0.01);
 }
 
 /* END WELCOME SECTION */
 /* START ABOUT SECTION */
 #about-section {
+  overflow: hidden;
   background: #acb9b5;
   -webkit-box-shadow: 0 0 0.3rem black;
           box-shadow: 0 0 0.3rem black;
@@ -327,6 +467,8 @@ header p {
 
 .about {
   padding: 1em;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 .about h2 {
@@ -337,9 +479,11 @@ header p {
 /* END ABOUT SECTION */
 /* START SKILL SECTION */
 #skill-section {
+  overflow: hidden;
   font-weight: normal;
   text-shadow: 0px 0.5px 2px black;
-  margin: 2em auto 1em auto;
+  padding-top: 1em;
+  margin: 1em auto 1em auto;
   max-width: 40rem;
   width: 90%;
 }
@@ -352,6 +496,8 @@ header p {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5em 0 0.5em 0;
+  -webkit-transition: all .4s ease-in;
+  transition: all .4s ease-in;
 }
 
 .skill-img {
@@ -365,9 +511,16 @@ header p {
   max-width: calc(100% - 3em);
 }
 
+.slide-up {
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
+  opacity: 0;
+}
+
 /* END SKILL SECTION */
 /* START PROJECT SECTION */
 #project-section {
+  padding-top: 1em;
   margin: 1em auto 0 auto;
   width: 100%;
   max-width: 60rem;
@@ -513,6 +666,11 @@ header p {
   max-height: 1em;
   max-width: 50%;
   margin-top: 0.2em;
+}
+
+.bounce {
+  -webkit-animation: bounce 1.0s ease-in-out;
+          animation: bounce 1.0s ease-in-out;
 }
 
 /* END CONTACT SECTION */
