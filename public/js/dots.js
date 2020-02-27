@@ -2,15 +2,15 @@ const canvas = document.getElementById('canvas'),
 ctx = canvas.getContext('2d'),
 dots = [],
 // changeable
-amount = 180, // relative (amount per sqrt(width+height)px / 100)
+amount = 120, // relative (amount per sqrt(width+height)px / 100)
 speed = 5, // max speed (0-speed) [px per 10sec]
-size = 1.5, // max size (0-size)
-lineWidth = 0.3,
-connectionDistance = 220,
+size = 1.6, // max size (0-size)
+lineWidth = 0.4,
+connectionDistance = 320,
 opacity = 0.9, // 0.1 - 1
 color = 'hsla(160, 8%, 70%, '+opacity+')',
 shadowColor = 'hsla(0, 0%, 70%, 0.6)',
-shadowBlur = 2;
+shadowBlur = 1;
 //
 
 
@@ -101,8 +101,8 @@ const createAllDots = () =>{
     const dotSpeed = (speed/10) * randomDirection;
     const myDot = new Dot (randomX, randomY, randomSize, dotSpeed);
     dots.push(myDot);
-  }  
-  moveDots();  
+  }
+  moveDots();
 };
 
 const moveDots = () => {  
@@ -111,15 +111,10 @@ const moveDots = () => {
   dots.each((e)=>{
     e.move();
   });
-  requestAnimationFrame(moveDots);
+  // window.requestAnimationFrame(moveDots);  
 };
-
-// const getDistance = (xpos1, ypos1, xpos2, ypos2) => {
-//   const resultX = Math.pow((xpos2-xpos1), 2);
-//   const resultY = Math.pow((ypos2-ypos1), 2);
-//   const result = Math.sqrt(resultX+resultY);
-//   return result;
-// };
+// decreases some lags
+window.setInterval(moveDots, 1000/20);
 
 const line = () => {  
   const relativeDistance = connectionDistance * screenRelative;  
